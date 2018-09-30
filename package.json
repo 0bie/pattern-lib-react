@@ -1,0 +1,59 @@
+{
+  "name": "pattern-lib-react",
+  "version": "0.0.1",
+  "description": "A collection of reusable UI components",
+  "main": "lib/index.js",
+  "scripts": {
+    "babel": "./node_modules/.bin/babel",
+    "webpack": "./node_modules/.bin/webpack",
+    "eslint": "./node_modules/.bin/eslint",
+    "prebuild": "rimraf '{dist, lib}' && yarn lint",
+    "build": "yarn webpack",
+    "build:dev": "yarn build -- --mode development --env.env=dev",
+    "build:prod": "yarn build -- --mode production --env.env=prod",
+    "build:lib": "rimraf lib && yarn lint && yarn babel ./src --out-dir ./lib",
+    "watch:dev": "yarn build:dev --watch",
+    "watch:prod": "yarn build:prod --watch",
+    "lint": "yarn eslint 'src/**/*.js'"
+  },
+  "keywords": [
+    "front-end",
+    "React",
+    "Javascript",
+    "pattern-library"
+  ],
+  "author": "Obie",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "7.0.0",
+    "@babel/core": "7.0.0",
+    "@babel/plugin-proposal-class-properties": "7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "7.0.0",
+    "@babel/plugin-transform-react-jsx": "7.0.0",
+    "@babel/preset-env": "7.0.0",
+    "babel-eslint": "9.0.0",
+    "babel-loader": "8.0.2",
+    "compression-webpack-plugin": "1.1.12",
+    "eslint": "5.5.0",
+    "eslint-loader": "2.1.0",
+    "eslint-plugin-react": "7.11.1",
+    "image-webpack-loader": "4.3.1",
+    "prop-types": "15.6.2",
+    "rimraf": "2.6.2",
+    "uglifyjs-webpack-plugin": "1.3.0",
+    "url-loader": "1.1.1",
+    "webpack": "4.17.2",
+    "webpack-cli": "3.1.0",
+    "webpack-manifest-plugin": "2.0.3",
+    "webpack-merge": "4.1.4"
+  },
+  "dependencies": {
+    "react": "16.4.2",
+    "react-dom": "16.4.2"
+  },
+  "engines": {
+    "node": "10.9.0"
+  },
+  "sideEffects": false
+}
