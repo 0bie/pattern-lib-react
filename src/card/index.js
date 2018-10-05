@@ -10,7 +10,8 @@ import {getShape, addClassNames} from '../utils';
  * @param {object} image - The image properties (Optional)
  * @param {object} icon - The icon properties (Optional)
  * @param {string} title - The card title
- * @param {string} ctaLabel The cta label
+ * @param {string} ctaLabel - The cta label
+ * @param {function} handleCta - Callback function executed when cta is clicked
  * @param {string} description - The card description
  * @param {array} actions - Call to actions
  * @param {array} classNames - Additional classnames (Optional)
@@ -24,7 +25,7 @@ export default function Card({
   icon,
   title,
   ctaLabel,
-  ctaHandler,
+  handleCta,
   description,
   actions,
   footer,
@@ -43,7 +44,7 @@ export default function Card({
               size="xs"
               tabIndex="0"
               label={ctaLabel}
-              onClick={ctaHandler}
+              onClick={handleCta}
               classNames={[getShape(rounded)]}
             />
           </div>
@@ -68,7 +69,7 @@ Card.propTypes = {
     alt: PropTypes.string
   }),
   ctaLabel: PropTypes.string,
-  ctaHandler: PropTypes.func,
+  handleCta: PropTypes.func,
   classNames: PropTypes.arrayOf(PropTypes.string),
   icon: PropTypes.shape({
     id: PropTypes.string,
