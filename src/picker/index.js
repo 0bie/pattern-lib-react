@@ -14,6 +14,7 @@ import {getShape, addClassNames, preventOuterScroll} from '../utils';
  * @param {array} groups - The picker groups (Optional)
  * @param {string} subtitle - The picker subtitle
  * @param {boolean} rounded - The picker shape (Optional)
+ * @param {function} handleClose - Callback function executed when closed
  * @param {boolean} preventClose - True if user can't dismiss
  * @param {array} classNames - Additional classNames (Optional)
  * @returns {object} React element tree describing the component
