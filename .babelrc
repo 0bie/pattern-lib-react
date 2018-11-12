@@ -14,5 +14,12 @@
     ["@babel/plugin-syntax-dynamic-import"],
     ["@babel/plugin-proposal-class-properties", {"loose": true}],
     ["@babel/plugin-proposal-object-rest-spread", { "useBuiltIns": true }]
-  ]
+  ],
+  "env": {
+    "production": {
+      "plugins": [
+        ["transform-react-remove-prop-types", {"mode": "remove", "removeImport": true}]
+      ]
+    }
+  }
 }

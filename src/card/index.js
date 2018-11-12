@@ -24,7 +24,7 @@ export default function Card({
   icon,
   title,
   ctaLabel,
-  ctaHandler,
+  handleCta,
   description,
   actions,
   footer,
@@ -38,12 +38,14 @@ export default function Card({
         {(icon || image) && <CardItem icon={icon} image={image} />}
         <div className="card-content">
           <div className="card-titlebar">
-            <h4 className="card-title">{title}</h4>
+            <h4 className="card-title">
+              <span className="title-text">{title}</span>
+            </h4>
             <Button
               size="xs"
               tabIndex="0"
               label={ctaLabel}
-              onClick={ctaHandler}
+              onClick={handleCta}
               classNames={[getShape(rounded)]}
             />
           </div>
@@ -68,7 +70,7 @@ Card.propTypes = {
     alt: PropTypes.string
   }),
   ctaLabel: PropTypes.string,
-  ctaHandler: PropTypes.func,
+  handleCta: PropTypes.func,
   classNames: PropTypes.arrayOf(PropTypes.string),
   icon: PropTypes.shape({
     id: PropTypes.string,

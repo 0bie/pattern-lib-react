@@ -11,7 +11,7 @@ import {addClassNames} from '../utils';
 export default function ListItem({content, classNames, ...props}) {
   return (
     <li className={`list-item ${addClassNames(classNames)}`} {...props}>
-      {content}
+      <span className="list-text">{content}</span>
     </li>
   );
 }

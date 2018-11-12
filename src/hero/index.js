@@ -31,7 +31,7 @@ export default function Hero({
           {cta && <HeroCta cta={cta} />}
         </div>
         <div className="hero-placeholder" />
-        {image && <Image className="hero-image" {...image} />}
+        {image && <Image classNames={['hero-image']} {...image} />}
       </section>
     </div>
   );
