@@ -39,7 +39,9 @@ export default function Card({
         {(icon || image) && <CardItem icon={icon} image={image} />}
         <div className="card-content">
           <div className="card-titlebar">
-            <h4 className="card-title">{title}</h4>
+            <h4 className="card-title">
+              <span className="title-text">{title}</span>
+            </h4>
             <Button
               size="xs"
               tabIndex="0"

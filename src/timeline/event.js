@@ -38,7 +38,7 @@ TimelineEvent.propTypes = {
     user: PropTypes.shape({
       firstName: PropTypes.string,
       lastName: PropTypes.string,
-      image: PropTypes.string
+      image: PropTypes.object
     })
   }),
   content: PropTypes.any,

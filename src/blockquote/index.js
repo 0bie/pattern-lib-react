@@ -67,7 +67,7 @@ Blockquote.propTypes = {
   user: PropTypes.shape({
     firstName: PropTypes.string,
     lastName: PropTypes.string,
-    image: PropTypes.string,
+    image: PropTypes.object,
     quote: PropTypes.string
   })
 };

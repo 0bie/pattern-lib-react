@@ -90,7 +90,7 @@ export default class CardlistItem extends React.Component {
             onTransitionEnd={this.handleTransitionEnd}
           >
             <div className="media-placeholder" />
-            <img src={image.url} alt={image.alt} ref={this.image} />
+            <img src={image.src} alt={image.alt} ref={this.image} />
           </div>
           <div className="cardlist-options">
             <Button

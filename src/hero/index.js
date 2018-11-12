@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Image from '../image';
 import HeroTitle from './title';
 import HeroCta from './cta';
 import {addClassNames} from '../utils';
@@ -30,7 +31,7 @@ export default function Hero({
           {cta && <HeroCta cta={cta} />}
         </div>
         <div className="hero-placeholder" />
-        {image && <img className="hero-image" src={image.url} alt={image.alt} />}
+        {image && <Image classNames={['hero-image']} {...image} />}
       </section>
     </div>
   );

@@ -15,6 +15,7 @@ export default function ModalHeader({title, preventClose, handleClose}) {
   if (!preventClose) {
     closeButton =
       <button
+        tabIndex="0"
         type="button"
         onClick={handleClose}
         className="btn btn--sm btn--link"
