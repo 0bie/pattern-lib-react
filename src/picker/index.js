@@ -79,6 +79,7 @@ Picker.propTypes = {
   rounded: PropTypes.bool,
   handleClose: PropTypes.func,
   preventClose: PropTypes.bool,
+  classNames: PropTypes.arrayOf(PropTypes.string),
   items: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
     item: PropTypes.element,

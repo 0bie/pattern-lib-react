@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {addClassNames} from '../utils';
 
 /**
@@ -15,3 +16,8 @@ export default function ListItem({content, classNames, ...props}) {
     </li>
   );
 }
+
+ListItem.propTypes = {
+  content: PropTypes.any,
+  classNames: PropTypes.arrayOf(PropTypes.string)
+};

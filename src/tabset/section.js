@@ -51,6 +51,7 @@ TabSection.propTypes = {
   id: PropTypes.string,
   title: PropTypes.string,
   content: PropTypes.any,
+  children: PropTypes.any,
   isActive: PropTypes.bool,
   handleToggleActive: PropTypes.func,
   classNames: PropTypes.arrayOf(PropTypes.string)

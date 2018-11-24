@@ -5,7 +5,7 @@ import {addClassNames} from '../utils';
 
 /**
  * Menu item
- * @param {string} content - The item content
+ * @param {string|object} content - The item content
  * @param {object} icon - Icon properties (Optional)
  * @param {array} classNames - Additional classNames (Optional)
  * @returns {object} React element tree describing the component
