@@ -5,7 +5,7 @@ import {addClassNames} from '../utils';
 
 /**
  * Menu item
- * @param {string} content - The item content
+ * @param {string|object} content - The item content
  * @param {object} icon - Icon properties (Optional)
  * @param {function} handleItem - Callback function executed when item is clicked
  * @param {array} classNames - Additional classNames (Optional)

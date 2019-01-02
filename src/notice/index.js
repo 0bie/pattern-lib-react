@@ -21,14 +21,18 @@ export default function Notice({
   iconPosition,
   message,
   rounded,
+  children,
   classNames,
   ...props
 }) {
   return (
     <div className={`notice ${getNoticeState(state)} ${getShape(rounded, 'notice')} ${addClassNames(classNames)}`} {...props}>
-      {icon && iconPosition === 'left' ? <Icon {...icon} /> : null}
-      <p>{message && message}</p>
-      {icon && iconPosition === 'right' ? <Icon {...icon} /> : null}
+      <section className="notice-content">
+        {icon && iconPosition === 'left' ? <Icon {...icon} /> : null}
+        <p>{message && message}</p>
+        {icon && iconPosition === 'right' ? <Icon {...icon} /> : null}
+      </section>
+      {children && <footer className="notice-footer">{children}</footer>}
     </div>
   );
 }
@@ -37,7 +41,8 @@ Notice.propTypes = {
   id: PropTypes.string,
   rounded: PropTypes.bool,
   message: PropTypes.any,
-  className: PropTypes.arrayOf(PropTypes.string),
+  children: PropTypes.any,
+  classNames: PropTypes.arrayOf(PropTypes.string),
   iconPosition: PropTypes.oneOf(['left', 'right']),
   icon: PropTypes.shape({
     id: PropTypes.string,

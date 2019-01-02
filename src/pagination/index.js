@@ -42,6 +42,7 @@ export default function Pagination({items, rounded, classNames, children, ...pro
 
 Pagination.propTypes = {
   rounded: PropTypes.bool,
+  children: PropTypes.any,
   classNames: PropTypes.arrayOf(PropTypes.string),
   items: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,

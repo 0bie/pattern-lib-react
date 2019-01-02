@@ -144,7 +144,7 @@ CardlistItem.propTypes = {
     alt: PropTypes.string
   }),
   title: PropTypes.string,
-  sibtitle: PropTypes.string,
+  subtitle: PropTypes.string,
   details: PropTypes.string,
   handleCta: PropTypes.func,
   classNames: PropTypes.arrayOf(PropTypes.string)

@@ -44,6 +44,7 @@ export default function Button({
 Button.propTypes = {
   label: PropTypes.string,
   icon: PropTypes.object,
+  iconPosition: PropTypes.string,
   rounded: PropTypes.bool,
   loading: PropTypes.bool,
   children: PropTypes.node,

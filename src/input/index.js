@@ -35,7 +35,7 @@ export default function Input({
   ...props
 }) {
   return (
-    <span id={id} className={`input-field ${getInputState(state)} ${addClassNames(classNames)}`} {...props}>
+    <span id={id} className={`input-field ${getInputState(state)} ${addClassNames(classNames)}`}>
       {type !== 'textField' &&
         <input
           type={type}
@@ -44,6 +44,7 @@ export default function Input({
           pattern={pattern}
           data-hint={pattern && `${id}-hint`}
           className={`input input--${size} ${getShape(rounded, 'input')} ${addClassNames(inputClassNames)}`}
+          {...props}
         />}
       {type === 'textField' &&
           <textarea
@@ -52,6 +53,7 @@ export default function Input({
             pattern={pattern}
             data-hint={pattern && `${id}-hint`}
             className={`input input--${size} ${getShape(rounded)} ${addClassNames(inputClassNames)}`}
+            {...props}
           />}
       {icon && <Icon {...icon} />}
       {state === 'error' && <Icon size="sm" id="warning" classNames={['icon--error']} />}
@@ -64,10 +66,17 @@ Input.propTypes = {
   id: PropTypes.string,
   inputId: PropTypes.string,
   pattern: PropTypes.string,
+  rounded: PropTypes.bool,
   placeholder: PropTypes.string,
   state: PropTypes.oneOf(['success', 'error', 'diabled']),
   type: PropTypes.oneOf(['text', 'number', 'textField']),
   classNames: PropTypes.arrayOf(PropTypes.string),
   inputClassNames: PropTypes.arrayOf(PropTypes.string),
-  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl', 'xxl'])
+  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl', 'xxl']),
+  icon: PropTypes.shape({
+    id: PropTypes.string,
+    title: PropTypes.string,
+    description: PropTypes.string,
+    size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
+  })
 };

@@ -26,7 +26,9 @@ export default function ButtonGroup({display, buttonArr, rounded, classNames, ..
 }
 
 ButtonGroup.propTypes = {
+  rounded: PropTypes.bool,
   display: PropTypes.oneOf(['inline', 'block']),
+  classNames: PropTypes.arrayOf(PropTypes.string),
   buttonArr: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     loading: PropTypes.bool,

@@ -126,6 +126,9 @@ export default class Dropdown extends React.Component {
 Dropdown.propTypes = {
   id: PropTypes.string,
   label: PropTypes.string,
+  rounded: PropTypes.bool,
+  classNames: PropTypes.arrayOf(PropTypes.string),
+  wrapClassNames: PropTypes.arrayOf(PropTypes.string),
   labelIcon: PropTypes.shape({
     id: PropTypes.string,
     title: PropTypes.string,

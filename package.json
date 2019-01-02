@@ -25,36 +25,33 @@
   "author": "Obie",
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "7.1.5",
-    "@babel/core": "7.1.5",
-    "@babel/plugin-proposal-class-properties": "7.1.0",
-    "@babel/plugin-proposal-object-rest-spread": "7.0.0",
-    "@babel/plugin-syntax-dynamic-import": "7.0.0",
-    "@babel/plugin-transform-react-jsx": "7.0.0",
-    "@babel/preset-env": "7.1.5",
+    "@babel/cli": "7.2.3",
+    "@babel/core": "7.2.2",
+    "@babel/plugin-proposal-class-properties": "7.2.3",
+    "@babel/plugin-proposal-object-rest-spread": "7.2.0",
+    "@babel/plugin-syntax-dynamic-import": "7.2.0",
+    "@babel/plugin-transform-react-jsx": "7.2.0",
+    "@babel/preset-env": "7.2.3",
     "babel-eslint": "10.0.1",
     "babel-loader": "8.0.4",
-    "babel-plugin-transform-react-remove-prop-types": "0.4.20",
+    "babel-plugin-transform-react-remove-prop-types": "0.4.21",
     "compression-webpack-plugin": "2.0.0",
-    "eslint": "5.9.0",
+    "eslint": "5.11.1",
     "eslint-loader": "2.1.1",
-    "eslint-plugin-react": "7.11.1",
-    "image-webpack-loader": "4.5.0",
+    "eslint-plugin-react": "7.12.0",
+    "image-webpack-loader": "4.6.0",
     "prop-types": "15.6.2",
     "rimraf": "2.6.2",
-    "uglifyjs-webpack-plugin": "2.0.1",
+    "uglifyjs-webpack-plugin": "2.1.1",
     "url-loader": "1.1.2",
-    "webpack": "4.25.1",
+    "webpack": "4.28.3",
     "webpack-cli": "3.1.2",
     "webpack-manifest-plugin": "2.0.4",
-    "webpack-merge": "4.1.4"
+    "webpack-merge": "4.1.5"
   },
   "dependencies": {
-    "react": "16.6.1",
-    "react-dom": "16.6.1"
-  },
-  "engines": {
-    "node": "11.1.0"
+    "react": "16.7.0",
+    "react-dom": "16.7.0"
   },
   "sideEffects": false
 }

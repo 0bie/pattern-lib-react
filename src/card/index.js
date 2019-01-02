@@ -42,15 +42,17 @@ export default function Card({
             <h4 className="card-title">
               <span className="title-text">{title}</span>
             </h4>
-            <Button
-              size="xs"
-              tabIndex="0"
-              label={ctaLabel}
-              onClick={handleCta}
-              classNames={[getShape(rounded)]}
-            />
+            {ctaLabel &&
+              <Button
+                size="xs"
+                tabIndex="0"
+                label={ctaLabel}
+                onClick={handleCta}
+                classNames={[getShape(rounded)]}
+              />}
           </div>
-          <div className="card-description">{description}</div>
+          {description &&
+            <div className="card-description">{description}</div>}
         </div>
         {footer &&
           <div className="card-footer">
@@ -63,6 +65,7 @@ export default function Card({
 
 Card.propTypes = {
   title: PropTypes.string,
+  description: PropTypes.string,
   actions: PropTypes.array,
   footer: PropTypes.bool,
   rounded: PropTypes.bool,
