@@ -42,6 +42,7 @@ export default function Icon({
 
 Icon.propTypes = {
   id: PropTypes.string,
+  title: PropTypes.string,
   fill: PropTypes.string,
   width: PropTypes.number,
   height: PropTypes.number,

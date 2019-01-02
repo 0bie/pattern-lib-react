@@ -44,9 +44,10 @@ export default function Button({
 Button.propTypes = {
   label: PropTypes.string,
   icon: PropTypes.object,
+  iconPosition: PropTypes.string,
   rounded: PropTypes.bool,
   loading: PropTypes.bool,
-  children: PropTypes.arrayOf(PropTypes.element),
+  children: PropTypes.node,
   classNames: PropTypes.arrayOf(PropTypes.string),
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
   size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl'])

@@ -10,6 +10,7 @@ import {addClassNames} from '../utils';
  * @param {string} title - The item title
  * @param {string} subtitle - The item sub-title
  * @param {string} details - The item details
+ * @param {function} handleCta - Callback function executed when cta is clicked
  * @param {array} classNames - Additional classNames
  * @returns {object} - React element tree describing the component
  */
@@ -74,7 +75,7 @@ export default class CardlistItem extends React.Component {
 
   render() {
     const {isActive} = this.state;
-    const {image, title, subtitle, details, classNames, ...props} = this.props;
+    const {image, title, subtitle, details, handleCta, classNames, ...props} = this.props;
     return (
       <li
         ref={this.container}
@@ -89,11 +90,12 @@ export default class CardlistItem extends React.Component {
             onTransitionEnd={this.handleTransitionEnd}
           >
             <div className="media-placeholder" />
-            <img src={image.url} alt={image.alt} ref={this.image} />
+            <img src={image.src} alt={image.alt} ref={this.image} />
           </div>
           <div className="cardlist-options">
             <Button
               size="xs"
+              onClick={handleCta}
               icon={{size: 'md', id: 'heart', title: 'favorite', description: 'favorite this content'}}
             />
             <a
@@ -114,11 +116,13 @@ export default class CardlistItem extends React.Component {
             </a>
             <Button
               size="xs"
+              onClick={handleCta}
               classNames={['cardlist-share']}
               icon={{size: 'sm', id: 'share', title: 'share this content'}}
             />
             <Button
               size="xs"
+              onClick={handleCta}
               icon={{size: 'sm', id: 'person', title: 'user avatar', description: 'the default user'}}
             />
           </div>
@@ -140,7 +144,8 @@ CardlistItem.propTypes = {
     alt: PropTypes.string
   }),
   title: PropTypes.string,
-  sibtitle: PropTypes.string,
+  subtitle: PropTypes.string,
   details: PropTypes.string,
+  handleCta: PropTypes.func,
   classNames: PropTypes.arrayOf(PropTypes.string)
 };

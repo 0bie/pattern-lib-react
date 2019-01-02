@@ -79,6 +79,8 @@ export default class Todo extends React.Component {
           </form>
         </header>
         <ul id="todo-list" className={`list todo-list ${getShape(rounded, 'todo')}`}>
+          {!initItems.length &&
+            <p>There are currently no tasks.</p>}
           {initItems.map(({id, content, done, classNames}) =>
             <TodoItem
               id={id}

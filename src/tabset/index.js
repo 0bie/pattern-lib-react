@@ -13,7 +13,7 @@ import {getShape, addClassNames} from '../utils';
 export default class TabSet extends Component {
 
   state = {
-    activeTab: 1
+    activeTab: null
   }
 
   handleToggle = (activeTab) => {
@@ -54,5 +54,6 @@ export default class TabSet extends Component {
 TabSet.propTypes = {
   id: PropTypes.string,
   rounded: PropTypes.bool,
+  children: PropTypes.any,
   classNames: PropTypes.arrayOf(PropTypes.string)
 };

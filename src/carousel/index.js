@@ -77,5 +77,6 @@ export default class Carousel extends Component {
 Carousel.propTypes = {
   id: PropTypes.string,
   rounded: PropTypes.bool,
+  children: PropTypes.any,
   classNames: PropTypes.arrayOf(PropTypes.string)
 };

@@ -10,7 +10,8 @@ import {getShape, addClassNames} from '../utils';
  * @param {object} image - The image properties (Optional)
  * @param {object} icon - The icon properties (Optional)
  * @param {string} title - The card title
- * @param {string} ctaLabel The cta label
+ * @param {string} ctaLabel - The cta label
+ * @param {function} handleCta - Callback function executed when cta is clicked
  * @param {string} description - The card description
  * @param {array} actions - Call to actions
  * @param {array} classNames - Additional classnames (Optional)
@@ -24,7 +25,7 @@ export default function Card({
   icon,
   title,
   ctaLabel,
-  ctaHandler,
+  handleCta,
   description,
   actions,
   footer,
@@ -38,16 +39,20 @@ export default function Card({
         {(icon || image) && <CardItem icon={icon} image={image} />}
         <div className="card-content">
           <div className="card-titlebar">
-            <h4 className="card-title">{title}</h4>
-            <Button
-              size="xs"
-              tabIndex="0"
-              label={ctaLabel}
-              onClick={ctaHandler}
-              classNames={[getShape(rounded)]}
-            />
+            <h4 className="card-title">
+              <span className="title-text">{title}</span>
+            </h4>
+            {ctaLabel &&
+              <Button
+                size="xs"
+                tabIndex="0"
+                label={ctaLabel}
+                onClick={handleCta}
+                classNames={[getShape(rounded)]}
+              />}
           </div>
-          <div className="card-description">{description}</div>
+          {description &&
+            <div className="card-description">{description}</div>}
         </div>
         {footer &&
           <div className="card-footer">
@@ -60,6 +65,7 @@ export default function Card({
 
 Card.propTypes = {
   title: PropTypes.string,
+  description: PropTypes.string,
   actions: PropTypes.array,
   footer: PropTypes.bool,
   rounded: PropTypes.bool,
@@ -68,7 +74,7 @@ Card.propTypes = {
     alt: PropTypes.string
   }),
   ctaLabel: PropTypes.string,
-  ctaHandler: PropTypes.func,
+  handleCta: PropTypes.func,
   classNames: PropTypes.arrayOf(PropTypes.string),
   icon: PropTypes.shape({
     id: PropTypes.string,

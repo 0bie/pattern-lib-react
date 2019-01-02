@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {addClassNames} from '../utils';
 
 /**
@@ -11,7 +12,12 @@ import {addClassNames} from '../utils';
 export default function ListItem({content, classNames, ...props}) {
   return (
     <li className={`list-item ${addClassNames(classNames)}`} {...props}>
-      {content}
+      <span className="list-text">{content}</span>
     </li>
   );
 }
+
+ListItem.propTypes = {
+  content: PropTypes.any,
+  classNames: PropTypes.arrayOf(PropTypes.string)
+};
