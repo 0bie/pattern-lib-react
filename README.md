@@ -14,7 +14,6 @@ To use a component in your project import it as a named module.
 import {Accordion} from 'pattern-lib-react';
 ```
 
-
 ## Documentation
 
 [Pattern Library Docs](https://bit.ly/2Pa6n1O)

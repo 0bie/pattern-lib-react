@@ -28,7 +28,7 @@ export default function List({items, children, classNames, rounded, ...props}) {
 List.propTypes = {
   rounded: PropTypes.bool,
   classNames: PropTypes.arrayOf(PropTypes.string),
-  children: PropTypes.arrayOf(PropTypes.element),
+  children: PropTypes.any,
   items: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
     content: PropTypes.string,
