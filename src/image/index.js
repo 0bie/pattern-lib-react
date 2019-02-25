@@ -4,7 +4,7 @@ import {addClassNames} from '../utils';
 
 /**
  * Image
- * @param {string} size - The image size (xs|sm|md|lg|xl)
+ * @param {string} size - The image size (xs|sm|md|lg|xl|full)
  * @param {string} src - The image URL
  * @param {string} caption - The image caption (Optional)
  * @param {string} alt - Alternate text
@@ -33,5 +33,5 @@ Image.propTypes = {
   caption: PropTypes.string,
   alt: PropTypes.string,
   classNames: PropTypes.arrayOf(PropTypes.string),
-  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl'])
+  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl', 'full'])
 };

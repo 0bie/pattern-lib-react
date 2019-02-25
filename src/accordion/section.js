@@ -65,7 +65,7 @@ export default class AccordionSection extends React.Component {
           onClick={this.handleToggle}
           onKeyUp={this.handleToggle}
         >
-          {title}
+          <span className="title-text">{title}</span>
         </h3>
         <div className="accordion-wrap" ref={this.container} onTransitionEnd={this.handleTransitionEnd}>
           <div

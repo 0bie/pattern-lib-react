@@ -13,7 +13,7 @@ import Image from '../image';
 export default function CardItem({image, icon}) {
   return (
     <div className="card-item">
-      {image && <Image {...image} size="xl" />}
+      {image && <Image {...image} size="full" />}
       {icon && <Icon {...icon} />}
     </div>
   );
