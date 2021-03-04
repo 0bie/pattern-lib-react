@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const commonPaths = require('./common-paths');
-const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   context: commonPaths.contextPath,
@@ -44,10 +44,9 @@ module.exports = {
   },
   optimization: {
     minimizer: [
-      new UglifyJsWebpackPlugin({
-        cache: true,
+      new TerserPlugin({
         parallel: true,
-        sourceMap: true
+        extractComments: false
       })
     ]
   },

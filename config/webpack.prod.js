@@ -1,7 +1,6 @@
 const webpack = require('webpack');
-const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin');
-const CompressionWebpackPlugin = require('compression-webpack-plugin');
-const ManifestPlugin = require('webpack-manifest-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const {WebpackManifestPlugin} = require('webpack-manifest-plugin');
 
 module.exports = {
   output: {
@@ -18,7 +17,6 @@ module.exports = {
   },
   optimization: {
     nodeEnv: 'production',
-    occurrenceOrder: true,
     runtimeChunk: 'single',
     splitChunks: {
       cacheGroups: {
@@ -32,17 +30,10 @@ module.exports = {
     }
   },
   plugins: [
-    new ManifestPlugin(),
-    new webpack.HashedModuleIdsPlugin(),
-    new UglifyJsWebpackPlugin({
-      sourceMap: true
-    }),
-    new CompressionWebpackPlugin({
-      filename: '[path].gz[query]',
-      algorithm: 'gzip',
-      test: /\.(js|html|css)$/,
-      threshold: 10240,
-      minRatio: 0.8
+    new WebpackManifestPlugin(),
+    new TerserPlugin({
+      parallel: true,
+      extractComments: false
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
