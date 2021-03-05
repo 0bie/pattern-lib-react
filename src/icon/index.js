@@ -29,11 +29,13 @@ export default function Icon({
       width={width}
       height={height}
       style={{fill}}
-      aria-labelledby="title"
+      aria-labelledby={`icon-${id}`}
       className={`icon icon--${size} ${addClassNames(classNames)}`}
       {...props}
     >
-      {title ? <title>{title}</title> : null}
+      {
+        title ? <title id={`icon-${id}`}>{title}</title> : null
+      }
       {description ? <desc>{description}</desc> : null}
       <use xlinkHref={`#${id}`} />
     </svg>
