@@ -141,7 +141,8 @@ export default class CardlistItem extends React.Component {
 CardlistItem.propTypes = {
   image: PropTypes.shape({
     url: PropTypes.string,
-    alt: PropTypes.string
+    alt: PropTypes.string,
+    src: PropTypes.string
   }),
   title: PropTypes.string,
   subtitle: PropTypes.string,

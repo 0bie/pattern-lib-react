@@ -103,7 +103,13 @@ export default class Dropdown extends React.Component {
           onKeyUp={this.handleToggle}
         >
           {label && label}
-          {labelIcon && <button type="button" className="btn">{<Icon {...labelIcon} />}</button>}
+          {
+            labelIcon && (
+              <button type="button" className="btn" aria-label="icon">
+                {<Icon {...labelIcon} />}
+              </button>
+            )
+          }
         </span>
         <div className={`dropdown-wrap ${addClassNames(wrapClassNames)}`} ref={this.wrap}>
           {content || <ul id={`${id}-list`} className="dropdown-list" aria-live="off">
